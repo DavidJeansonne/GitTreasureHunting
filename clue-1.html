@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Git Treasure Hunting</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <style>
+
+      body {
+        background: url('paper.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      h2 {
+        color: black;
+        font-size: 25px;
+        font-weight: 800;
+      }
+
+      p {
+        color: black;
+        font-size: 20px;
+        font-weight: 800;
+      }
+
+      .form-control:focus {
+        outline: 0;
+        box-shadow: 0 0 0 0rem rgb(13 110 253 / 0%);
+      }
+
+      .input-group.mb-3 {
+        background: black;
+      }
+
+      span.input-group-text {
+        background: black;
+        color: white;
+        font-size: larger;
+        font-weight: 800;
+        border: 0px solid black;
+      }
+
+      input.form-control, input.form-control:focus {
+        background: black;
+        color: white;
+        font-size: larger;
+        font-weight: 800;
+        border: 0px solid black;
+      }
+
+      label.form-label {
+        font-size: larger;
+        font-weight: 800;
+      }
+
+      .btn-warning {
+        padding: 10px 20px;
+        border-radius: 10px;
+        color: black;
+        font-size: larger;
+        font-weight: 800;
+        box-shadow: 2px 2px 5px black;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <br>
+          <img src="logo.png" width="100%">
+          <br>
+          <h2>Answer the questions below to unlock a treasure!</h2>
+          <br> <!-- Question -->
+          <label for="basic-url" class="form-label">What command will initialize an empty repository?</label>
+          <div class="input-group mb-3">
+            <span class="input-group-text">$</span>
+            <input id="q1" type="text" class="form-control" aria-label="Type A Command">
+          </div>
+          <br> <!-- Question -->
+          <label for="basic-url" class="form-label">What command will add a file named "index.html" to the staging area?</label>
+          <div class="input-group mb-3">
+            <span class="input-group-text">$</span>
+            <input id="q2" type="text" class="form-control" aria-label="Type A Command">
+          </div>
+          <br> <!-- Question -->
+          <label for="basic-url" class="form-label">What command will commit any files to the repository with a message of "First commit"?</label>
+          <div class="input-group mb-3">
+            <span class="input-group-text">$</span>
+            <input id="q3" type="text" class="form-control" aria-label="Type A Command">
+          </div>
+          <br>
+          <button type="button" class="btn btn-warning" onclick="checkAnswers1()">Run</button>
+          <br><br><br>
+          <div id="clue" class="form-label"></div>
+        </div>
+      </div>
+    </div>
+
+
+    <script>
+
+      function checkAnswers1(){
+
+        q1 = document.getElementById('q1').value;
+        q2 = document.getElementById('q2').value;
+        q3 = document.getElementById('q3').value;
+        q3 = q3.replace(/'/g, "");
+        q3 = q3.replace(/"/g, "");
+
+        if (q1 === "below" && q2 === "below" && q3 === "below"){
+            document.getElementById('clue').innerHTML = '<p><span class="text-success">You have discovered my hidden easter egg! You found the treasure chest!</span><br> Clone this URL to discover its wonders!<br> https://github.com/DavidJeansonne/GitHiddenChest <br></p><br>';
+        } else if (q1 === "git init" && q2 === "git add index.html" && q3 === "git commit -m First commit"){
+            document.getElementById('clue').innerHTML = '<p><span class="text-success">Here is your secret treasure... </span><br> Clone this URL to discover its wonders!<br> https://github.com/DavidJeansonne/Chalice <br>You may proceed to the next challenge.</p><button type="button" class="btn btn-warning" onclick="location.href=\'clue-2.html\';">Continue...</button><br><br>';
+        } else {
+           document.getElementById('clue').innerHTML = '<p><span class="text-danger">You must answer all 3 questions to find the treasure!</span></p>';
+        }
+
+
+      }
+
+    </script>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  </body>
+</html>
