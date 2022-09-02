@@ -67,7 +67,7 @@
           <br>
           <img src="logo.png" width="100%">
           <br>
-          <h2>Are you ready to find the lost treasures of JWD? Answer questions to unlock a world of treasures! Press the button when you are ready to begin!</h2>
+          <h2>Are you ready to find the lost treasures of JWD? <a href="https://replit.com/@DavidJeansonne/Git-Treasure-Hunt">Fork this REPL as a place to store your treasures.</a> Answer questions to unlock a world of treasures! Press the button below when you are ready to begin!</h2>
           <br>
           <button type="button" class="btn btn-warning" onclick="location.href='clue-1.html';">Begin</button>
           <br><br><br>
@@ -77,25 +77,6 @@
     </div>
 
 
-    <script>
-
-      function checkAnswers1(){
-
-        q1 = document.getElementById('q1').value;
-        q2 = document.getElementById('q2').value;
-        q3 = document.getElementById('q3').value;
-        q3 = q3.replace(/'/g, "");
-        q3 = q3.replace(/"/g, "");
-
-        if (q1 === "git init" && q2 === "git add index.html" && q3 === "git commit -m first commit"){
-            document.getElementById('clue').innerHTML = '<p><span class="text-success">Here is your secret clue... </span><br> Make a clone of this URL: ### then click on this link below!<br>Collect your reward!</p>';
-        } else {
-           document.getElementById('clue').innerHTML = '<span class="text-danger">You must answer all 3 questions to get a secret clue!</span>';
-        }
-      }
-
-    </script>
-    <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
   </body>
 </html>
